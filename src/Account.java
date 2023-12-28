@@ -1,9 +1,13 @@
+import java.text.MessageFormat;
+import java.time.LocalDate;
+
 //Classes are used to be a blueprint, for example a Cake Receipt is a blueprint, while the cake itself is an instance.
 public class Account {
     private Integer accountNumber;
     private Client client;
-    private Double balance;
-    private Double limit;
+    private Double balance = 0.0;
+    private Double limit = 0.0;
+    private final LocalDate openDate = LocalDate.now();
 
     public Account(Integer accountNumber, Client client, Double balance, Double limit) {
         this.accountNumber = accountNumber;
@@ -12,6 +16,7 @@ public class Account {
         this.limit = limit;
     }
 
+//    Default constructor, testing purpose.
     public Account() {
 
     }
@@ -20,7 +25,8 @@ public class Account {
     //can perform. In order to perform those, it can receive parameters or not.
     public boolean withdraw(Double amount) {
         if(amount <= balance) {
-            balance -= amount;
+            Double newBalance = balance -= amount;
+            setBalance(newBalance);
             return true;
         }
         return false;
@@ -29,9 +35,10 @@ public class Account {
 
     public Double deposit(Double amount) {
         if(amount <= 0) {
-            return balance;
+            return getBalance();
         }
-        return balance + amount;
+        setBalance(balance + amount);
+        return getBalance();
     }
 
     //Here an important, objects are sent by reference, this means
@@ -53,6 +60,15 @@ public class Account {
 
     private boolean checkValidAmount(Double amount) {
         return amount >= 0;
+    }
+
+    public Double calculateSavings() {
+        return balance * 0.1;
+    }
+
+    public String printAccountInfo() {
+        return " Hi "+this.getClient().firstName() + "\n Your balance: "+this.getBalance()+" \n Account opened in: "
+                +this.getOpenDate();
     }
     public Integer getAccountNumber() {
         return accountNumber;
@@ -84,6 +100,10 @@ public class Account {
 
     public void setLimit(Double limit) {
         this.limit = limit;
+    }
+
+    public LocalDate getOpenDate() {
+        return openDate;
     }
 
     @Override
