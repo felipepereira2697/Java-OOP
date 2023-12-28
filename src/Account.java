@@ -1,5 +1,6 @@
 import java.text.MessageFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 //Classes are used to be a blueprint, for example a Cake Receipt is a blueprint, while the cake itself is an instance.
 public class Account {
@@ -68,7 +69,7 @@ public class Account {
 
     public String printAccountInfo() {
         return " Hi "+this.getClient().firstName() + "\n Your balance: "+this.getBalance()+" \n Account opened in: "
-                +this.getOpenDate();
+                +this.getFormattedDate();
     }
     public Integer getAccountNumber() {
         return accountNumber;
@@ -102,8 +103,9 @@ public class Account {
         this.limit = limit;
     }
 
-    public LocalDate getOpenDate() {
-        return openDate;
+    public String getFormattedDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM uuuu");
+        return LocalDate.now().format(formatter);
     }
 
     @Override

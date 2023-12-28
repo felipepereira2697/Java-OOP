@@ -17,11 +17,8 @@ public class Main {
         //stores a new place in memory for that object and returns a reference for that place that can be
         //used in the variable
         Client arya = new Client("Arya", "Stark", LocalDate.now());
-        System.out.println(acct.getAccountNumber());
-
         acct.setClient(arya);
 
-        System.out.println("Ms "+acct.getClient().lastName());
         System.out.println(acct.printAccountInfo());
     }
 }
