@@ -1,6 +1,4 @@
-import com.br.javaoop.bank.Account;
-import com.br.javaoop.bank.Client;
-import com.br.javaoop.bank.Manager;
+import com.br.javaoop.bank.*;
 
 import java.time.LocalDate;
 
@@ -31,8 +29,14 @@ class Main {
 
         System.out.println(Account.getTotalAccounts());
 
-        //String branchName, String name, String documentNumber, String identifier, LocalDate joinAt, Double salary
-        Manager michael = new Manager("Scranton", "Michael Scott", "12378adj", "ID13928", LocalDate.now(), 60000.0);
+        //Polymorphism applied here, its the possibility of an object be referenced in different forms,
+        //in this case I'm referencing a Manager as an employee because a manager IS A employee
+        //What if I tried michael.getBonus()? Since it happens in execution time Java would know
+        //that Michael is actually a manager and print the correct bonus which is bonus defined in the Manager class.
+        Employee michael = new Manager("Scranton", "Michael Scott", "12378adj", "ID13928", LocalDate.now(), 60000.0);
+        Employee john = new Cashier( "John Doe", "781d", "ID9292", LocalDate.now(), 30000.0);
+
         System.out.println(michael);
+        System.out.println(john);
     }
 }
