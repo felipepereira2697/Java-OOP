@@ -2,7 +2,9 @@ package com.br.javaoop.bank;
 
 import java.time.LocalDate;
 
-public class Employee {
+//Since it should not be possible on our domain context to instantiate an Employee, this makes more sense
+//to be defined as abstract class
+public abstract class Employee {
     private String name;
     private String documentNumber;
     private String identifier;
@@ -75,8 +77,8 @@ public class Employee {
         this.password = password;
     }
 
-    public double getBonus() {
-        return salary * 0.10;
-    }
+    //Creating an abstract method since the Employee class is abstract and we obligate the classes
+    //that inherits from Employee to implement the getBonus method correctly.
+    public abstract double getBonus();
 
 }
