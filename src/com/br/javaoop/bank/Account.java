@@ -1,4 +1,5 @@
-import java.text.MessageFormat;
+package com.br.javaoop.bank;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -10,7 +11,8 @@ public class Account {
     private Double limit = 0.0;
     private final LocalDate openDate = LocalDate.now();
     //When we want to share across all the instances and the attribute does not belong to an instance
-    //we can create as static
+    //we can create as static. When we declare as static attribute now it belongs to the class and not
+    //to the instance itself.
     private static int totalAccounts;
 
     public Account(Integer accountNumber, Client client, Double balance, Double limit) {
@@ -118,6 +120,7 @@ public class Account {
     }
 
     public static Integer getTotalAccounts() {
+
         return totalAccounts;
     }
 

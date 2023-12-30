@@ -10,3 +10,6 @@ take note and remember :)
 
 Encapsulation: Is the idea to hide/encapsulate all class members like attributes 
 and how their methods behaves internally.
+
+Static Attributes and Methods: Only can access other static attributes/methods because
+inside of a static method we do not have access to the "this" keyword.
