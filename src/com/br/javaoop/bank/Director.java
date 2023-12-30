@@ -2,7 +2,7 @@ package com.br.javaoop.bank;
 
 import java.time.LocalDate;
 
-public class Director extends Employee{
+public class Director extends Employee implements Authenticatable{
 
     private String territoryAssigned;
 
@@ -23,5 +23,10 @@ public class Director extends Employee{
 
     public String getTerritoryAssigned() {
         return territoryAssigned;
+    }
+
+    @Override
+    public boolean auth(String pass) {
+        return pass.equals(this.getPassword());
     }
 }

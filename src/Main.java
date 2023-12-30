@@ -33,9 +33,9 @@ class Main {
         //in this case I'm referencing a Manager as an employee because a manager IS A employee
         //What if I tried michael.getBonus()? Since the method invocation happens in execution time Java would know
         //that Michael is actually a manager and print the correct bonus which is bonus defined in the Manager class.
-        Employee michael = new Manager("Scranton", "Michael Scott", "12378adj", "ID13928", LocalDate.now(), 60000.0);
+        Manager michael = new Manager("Scranton", "Michael Scott", "12378adj", "ID13928", LocalDate.now(), 60000.0, 3);
         Employee john = new Cashier( "John Doe", "781d", "ID9292", LocalDate.now(), 30000.0);
-        Employee ellie = new Director("Philadelphia", "Ellie", "8123", "ID142624", LocalDate.now(), 425000.0);
+        Director ellie = new Director("Philadelphia", "Ellie", "8123", "ID142624", LocalDate.now(), 425000.0);
         //Polymorphism comes handy when we want for example have a method that can receive Manager, Cashier, Director
         //but all are employees in the end of the day
         BonusController bonusController = new BonusController();
@@ -43,10 +43,17 @@ class Main {
         bonusController.register(john);
         bonusController.register(ellie);
 
+        michael.setPassword("123");
+        ellie.setPassword("batatinha");
         System.out.println(michael);
         System.out.println(john);
         System.out.println(ellie);
 
         System.out.println("Bonus so far "+bonusController.getTotalBonus());
+
+        System.out.println(InternalControl.login(michael));
+        System.out.println(InternalControl.login(ellie));
+
+
     }
 }
