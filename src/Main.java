@@ -1,5 +1,6 @@
 import com.br.javaoop.bank.Account;
 import com.br.javaoop.bank.Client;
+import com.br.javaoop.bank.Manager;
 
 import java.time.LocalDate;
 
@@ -30,5 +31,8 @@ class Main {
 
         System.out.println(Account.getTotalAccounts());
 
+        //String branchName, String name, String documentNumber, String identifier, LocalDate joinAt, Double salary
+        Manager michael = new Manager("Scranton", "Michael Scott", "12378adj", "ID13928", LocalDate.now(), 60000.0);
+        System.out.println(michael);
     }
 }
