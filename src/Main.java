@@ -35,15 +35,17 @@ class Main {
         //that Michael is actually a manager and print the correct bonus which is bonus defined in the Manager class.
         Employee michael = new Manager("Scranton", "Michael Scott", "12378adj", "ID13928", LocalDate.now(), 60000.0);
         Employee john = new Cashier( "John Doe", "781d", "ID9292", LocalDate.now(), 30000.0);
-
+        Employee ellie = new Director("Philadelphia", "Ellie", "8123", "ID142624", LocalDate.now(), 425000.0);
         //Polymorphism comes handy when we want for example have a method that can receive Manager, Cashier, Director
         //but all are employees in the end of the day
         BonusController bonusController = new BonusController();
         bonusController.register(michael);
         bonusController.register(john);
+        bonusController.register(ellie);
 
         System.out.println(michael);
         System.out.println(john);
+        System.out.println(ellie);
 
         System.out.println("Bonus so far "+bonusController.getTotalBonus());
     }
