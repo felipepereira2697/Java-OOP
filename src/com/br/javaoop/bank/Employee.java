@@ -11,8 +11,6 @@ public class Employee {
     private Double salary;
     private String password;
 
-
-    //name, documentNumber, identifier, joinAt, salary
     public Employee(String name, String documentNumber, String identifier, LocalDate joinAt, Double salary) {
         this.name = name;
         this.documentNumber = documentNumber;
