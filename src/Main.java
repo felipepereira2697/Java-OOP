@@ -13,12 +13,19 @@ public class Main {
         acct.deposit(1000.0);
         acct.setLimit(3000.0);
 
+        Account acct2 = new Account();
+        acct.setAccountNumber(183712);
+        acct.deposit(2000.0);
+        acct.setLimit(3000.0);
+
         //Why new keyword is so important? When you use new and instatiate a new object, this basically
         //stores a new place in memory for that object and returns a reference for that place that can be
         //used in the variable
-        Client arya = new Client("Arya", "Stark", LocalDate.now());
+        Client arya = new Client("Arya", "Stark", LocalDate.now(), "NF789231");
         acct.setClient(arya);
 
         System.out.println(acct.printAccountInfo());
+
+        System.out.println(Account.getTotalAccounts());
     }
 }

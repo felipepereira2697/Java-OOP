@@ -9,17 +9,21 @@ public class Account {
     private Double balance = 0.0;
     private Double limit = 0.0;
     private final LocalDate openDate = LocalDate.now();
+    //When we want to share across all the instances and the attribute does not belong to an instance
+    //we can create as static
+    private static int totalAccounts;
 
     public Account(Integer accountNumber, Client client, Double balance, Double limit) {
         this.accountNumber = accountNumber;
         this.client = client;
         this.balance = balance;
         this.limit = limit;
+        totalAccounts += 1;
     }
 
 //    Default constructor, testing purpose.
     public Account() {
-
+        totalAccounts += 1;
     }
 
     //Class behaviors are called methods, this means, operations that this class
@@ -91,7 +95,12 @@ public class Account {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    //Private access modifier means that this method can only be accessed inside this class.
+    //The idea here is also to perform Encapsulation because this setBalance is only used here
+    //and more specifically to in withdraw and deposit methods, but we should avoid let other
+    //classes access or use this to modify the balance straight to it because we might skip some
+    //important business rules.
+    private void setBalance(Double balance) {
         this.balance = balance;
     }
 
@@ -106,6 +115,10 @@ public class Account {
     public String getFormattedDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM uuuu");
         return LocalDate.now().format(formatter);
+    }
+
+    public static Integer getTotalAccounts() {
+        return totalAccounts;
     }
 
     @Override
