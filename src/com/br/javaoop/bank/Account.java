@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 //Classes are used to be a blueprint, for example a Cake Receipt is a blueprint, while the cake itself is an instance.
-public class Account {
+public abstract class Account {
     private Integer accountNumber;
     private Client client;
     private Double balance = 0.0;

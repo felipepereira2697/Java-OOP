@@ -9,12 +9,12 @@ class Main {
         //you are actually accessing a reference to that object
         //Unlike primitive values for example: integer, double, boolean, char, byte
         //See doc: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
-        Account acct = new Account();
+        RegularAccount acct = new RegularAccount();
         acct.setAccountNumber(12367);
         acct.deposit(1000.0);
         acct.setLimit(3000.0);
 
-        Account acct2 = new Account();
+        SavingAccount acct2 = new SavingAccount();
         acct.setAccountNumber(183712);
         acct.deposit(2000.0);
         acct.setLimit(3000.0);
