@@ -2,6 +2,7 @@ package com.br.javaoop.bank;
 
 import java.time.LocalDate;
 
+//Classes are used to be a blueprint, for example a Cake Receipt is a blueprint, while the cake itself is an instance.
 //Since it should not be possible on our domain context to instantiate an Employee, this makes more sense
 //to be defined as abstract class
 public abstract class Employee {

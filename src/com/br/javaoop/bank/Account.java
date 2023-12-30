@@ -65,16 +65,12 @@ public abstract class Account {
         return false;
     }
 
-    private boolean checkValidAmount(Double amount) {
+    protected boolean checkValidAmount(Double amount) {
         return amount >= 0;
     }
 
-    public Double calculateSavings() {
-        return balance * 0.1;
-    }
-
     public String printAccountInfo() {
-        return " Hi "+this.getClient().firstName() + "\n Your balance: "+this.getBalance()+" \n Account opened in: "
+        return " Hi "+this.getClient().firstName() + "\n Your balance: "+this.getBalance()+" \n Account number:"+this.getAccountNumber()+" opened in: "
                 +this.getFormattedDate();
     }
     public Integer getAccountNumber() {
@@ -120,17 +116,6 @@ public abstract class Account {
     }
 
     public static Integer getTotalAccounts() {
-
         return totalAccounts;
-    }
-
-    @Override
-    public String toString() {
-        return "Account{" +
-                "accountNumber=" + accountNumber +
-                ", client=" + client +
-                ", balance=" + balance +
-                ", limit=" + limit +
-                '}';
     }
 }

@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 class Main {
     public static void main(String[] args) {
-        //Creating an com.br.javaoop.bank.Account instance
+        //Creating an Account instance
         //Objects are all accessed by REFERENCE that means, when you access the object
         //you are actually accessing a reference to that object
         //Unlike primitive values for example: integer, double, boolean, char, byte
