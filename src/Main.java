@@ -29,7 +29,7 @@ class Main {
 
         System.out.println(Account.getTotalAccounts());
 
-        //Polymorphism applied here, its the possibility of an object be referenced in different forms,
+        //Polymorphism applied here, it's the possibility of an object be referenced in different forms,
         //in this case I'm referencing a Manager as an employee because a manager IS A employee
         //What if I tried michael.getBonus()? Since the method invocation happens in execution time Java would know
         //that Michael is actually a manager and print the correct bonus which is bonus defined in the Manager class.
@@ -49,7 +49,7 @@ class Main {
         System.out.println(john);
         System.out.println(ellie);
 
-        System.out.println("Bonus so far "+bonusController.getTotalBonus());
+        System.out.println("All bonus so far "+bonusController.getTotalBonus());
 
         System.out.println(InternalControl.login(michael));
         System.out.println(InternalControl.login(ellie));

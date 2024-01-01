@@ -42,7 +42,7 @@ public abstract class Account {
 
     public Double deposit(Double amount) {
         if(amount <= 0) {
-            return getBalance();
+            throw new IllegalArgumentException("Not a valid amount of money to be deposited");
         }
         setBalance(balance + amount);
         return getBalance();
