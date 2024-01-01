@@ -2,6 +2,7 @@ package com.br.javaoop.bank;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 //Classes are used to be a blueprint, for example a Cake Receipt is a blueprint, while the cake itself is an instance.
 public abstract class Account {
@@ -118,4 +119,12 @@ public abstract class Account {
     public static Integer getTotalAccounts() {
         return totalAccounts;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Account account)) return false;
+        return Objects.equals(accountNumber, account.accountNumber);
+    }
+
 }

@@ -1,5 +1,7 @@
 package com.br.javaoop.bank;
 
+import java.util.Objects;
+
 public class RegularAccount extends Account implements Taxable, AccountOperations{
 
     public RegularAccount(Integer accountNumber, Client client, Double balance, Double limit) {
@@ -13,4 +15,6 @@ public class RegularAccount extends Account implements Taxable, AccountOperation
     public double getTaxValue() {
         return 0.02;
     }
+
+
 }
