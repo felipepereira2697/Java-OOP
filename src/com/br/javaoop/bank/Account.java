@@ -120,6 +120,8 @@ public abstract class Account {
         return totalAccounts;
     }
 
+
+    //For our business domain: what makes an account unique is their account number
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

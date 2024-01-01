@@ -16,5 +16,4 @@ public class RegularAccount extends Account implements Taxable, AccountOperation
         return 0.02;
     }
 
-
 }

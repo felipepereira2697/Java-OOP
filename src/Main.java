@@ -30,14 +30,14 @@ class Main {
         acct3.deposit(2000.0);
         acct3.setLimit(3000.0);
 
-        System.out.println("Same account number here --> "+acct.equals(acct3));
 
         //Why new keyword is so important? When you use new and instantiate a new object, this basically
         //stores a new place in memory for that object and returns a reference for that place that can be
         //used in the variable
         Client arya = new Client("Arya", "Stark", LocalDate.now(), "NF789231");
         acct.setClient(arya);
-
+        Client jonsnow = new Client("Jon", "Snow", LocalDate.now(), "NF91");
+        acct2.setClient(jonsnow);
         System.out.println(acct.printAccountInfo());
 
         System.out.println(Account.getTotalAccounts());
@@ -66,6 +66,12 @@ class Main {
 
         System.out.println(InternalControl.login(michael));
         System.out.println(InternalControl.login(ellie));
+
+        Bank b = new Bank("Batatinha Bank", 1);
+        b.addAccountToBank(acct);
+        b.addAccountToBank(acct2);
+
+        b.printBankAccounts();
 
 
     }
