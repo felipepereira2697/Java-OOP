@@ -1,38 +1,32 @@
 package com.br.javaoop.bank;
 
+import java.util.ArrayList;
+
 public class Bank {
     private String name;
     private int number;
-    private Account[] accounts;
+    private ArrayList<Account> accounts;
 
 
     public Bank(String name, int number) {
         this.name = name;
         this.number = number;
-        this.accounts = new Account[5];
+        this.accounts = new ArrayList<Account>();
 
 
     }
 
     public boolean addAccountToBank(Account newAccount) {
-
-        for(int i = 0; i < this.accounts.length ; i++) {
-            if(this.accounts[i] != null) {
-                continue;
-            }else {
-                this.accounts[i] = newAccount;
-                return true;
-            }
-        }
-        return false;
+      if(newAccount != null ){
+          this.accounts.add(newAccount);
+          return  true;
+      }
+      return false;
     }
 
     public void printBankAccounts() {
-        for (Account item : accounts) {
-            if(item != null) {
-                System.out.println("Account "+item.getAccountNumber()+" from client "+item.getClient().getFullName());
-            }
-
+        for (Account account : this.accounts) {
+            System.out.println("-- Account " + account.getAccountNumber() + " from client " + account.getClient().getFullName());
         }
     }
 
