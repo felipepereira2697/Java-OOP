@@ -1,7 +1,6 @@
 import com.br.javaoop.bank.*;
 
 import java.time.LocalDate;
-
 class Main {
     public static void main(String[] args) {
         //Creating an Account instance
@@ -27,8 +26,10 @@ class Main {
 
         RegularAccount acct3 = new RegularAccount();
         acct3.setAccountNumber(12367);
-        acct3.deposit(2000.0);
+        acct3.deposit(10010.0);
         acct3.setLimit(3000.0);
+
+        System.out.println("compare to "+acct.compareTo(acct3));
 
 
         //Why new keyword is so important? When you use new and instantiate a new object, this basically
@@ -70,8 +71,17 @@ class Main {
         Bank b = new Bank("Batatinha Bank", 1);
         b.addAccountToBank(acct);
         b.addAccountToBank(acct2);
-
         b.printBankAccounts();
+
+
+
+
+//        Commented Code - But just to show that this is a valid statement although it does not make sense
+//        List lista = new ArrayList();
+//        lista.add("Uma string");
+//        lista.add(acct);
+//        System.out.println(lista);
+//        System.out.println(lista);
 
 
     }

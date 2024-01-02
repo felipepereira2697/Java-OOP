@@ -1,18 +1,20 @@
 package com.br.javaoop.bank;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bank {
     private String name;
     private int number;
-    private ArrayList<Account> accounts;
+
+    //Every time we can is better to use the interface instead of the specific type
+    //so better to return  a List<Account> then ArrayList<Account>
+    //If by any chance we change from ArrayList to LinkedList we don't break the attribute/method
+    private List<Account> accounts = new ArrayList<>();
 
 
     public Bank(String name, int number) {
         this.name = name;
         this.number = number;
-        this.accounts = new ArrayList<Account>();
-
 
     }
 
