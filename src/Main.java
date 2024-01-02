@@ -72,6 +72,7 @@ class Main {
         b.addAccountToBank(acct);
         b.addAccountToBank(acct2);
         b.printBankAccounts();
+        b.printAllClients();
 
 
 
